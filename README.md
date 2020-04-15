@@ -73,7 +73,7 @@ console.log(`Should equal: ${b}`);
 ```
 
  - Output:
-<img src="http://raw.githubusercontent.com/oze4/chalky/master/docs/demo_2.png" width="300" height="40" alt="demo"/>
+<img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_2.png" width="300" height="40" alt="demo"/>
 
 ---
 
