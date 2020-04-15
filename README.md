@@ -25,7 +25,7 @@ We're not quite hardened [chalk](https://www.npmjs.com/package/chalk), but we're
 
 # Demos
 
-#### ~ Chaining (like [chalk](https://www.npmjs.com/package/chalk)) ~
+### Chaining (like [chalk](https://www.npmjs.com/package/chalk))
 
   - Chain methods together to change the foreground color, background color, add formatting (italic, bold, underline, etc..), for unique color/formatting combinations.
 
@@ -40,7 +40,7 @@ console.log(
  - Output:
 <img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_0.png" width="300" height="40" alt="demo"/>
 
-#### ~ Color priority in chain ~
+### Color priority in chain
 
  - The last color in the chain is what gets used:
 
@@ -57,8 +57,7 @@ console.log(`Should equal: ${b}`);
 ```
  - Output:
 <img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_1.png" width="300" height="40" alt="demo"/>
-
-  - Another example:
+<br />
 
 ```javascript
 const chalky = require('chalky');
