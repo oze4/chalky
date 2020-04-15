@@ -1,65 +1,42 @@
-exports.makeFgBgStyles = (val) => val && [
-  {
-    name: 'black',
-    value: `\x1b[${val}0m`,
-  },
-  {
-    name: 'red',
-    value: `\x1b[${val}1m`,
-  },
-  {
-    name: 'green',
-    value: `\x1b[${val}2m`,
-  },
-  {
-    name: 'yellow',
-    value: `\x1b[${val}3m`,
-  },
-  {
-    name: 'blue',
-    value: `\x1b[${val}4m`,
-  },
-  {
-    name: 'magenta',
-    value: `\x1b[${val}5m`,
-  },
-  {
-    name: 'cyan',
-    value: `\x1b[${val}6m`,
-  },
-  {
-    name: 'white',
-    value: `\x1b[${val}7m`,
-  },
+// Order is EXTREMELY important with these arrays
+const colors = [
+  'black',     // 0
+  'red',       // 1
+  'green',     // 2
+  'yellow',    // 3
+  'blue',      // 4
+  'magenta',   // 5
+  'cyan',      // 6
+  'white',     // 7
+];
+const formats = [
+  'bold',      // 1
+  'light',     // 2
+  'italic',    // 3
+  'underline', // 4
+  'blink',     // 5
+  // skip      // 6
+  'inverse',   // 7
+  'hidden',    // 8
 ];
 
-exports.makeFormattingStyles = () => [
-  {
-    name: 'bold',
-    value: '\x1b[1m',
-  },
-  {
-    name: 'light',
-    value: '\x1b[2m',
-  },
-  {
-    name: 'italic',
-    value: '\x1b[3m',
-  },
-  {
-    name: 'underline',
-    value: '\x1b[4m',
-  },
-  {
-    name: 'blink',
-    value: '\x1b[5m',
-  },
-  {
-    name: 'inverse',
-    value: '\x1b[7m',
-  },
-  {
-    name: 'hidden',
-    value: '\x1b[8m',
-  },
-];
+function createFgBgStyles(val) {
+  return colors.map((name, index) => ({ name, value: `\x1b[${val}${index}m` }));
+}
+
+function createFormatStyles() {
+  let styles = [];
+  
+  formats.forEach((name, index) => {
+    const stylesToSkip = [6];
+    let i = index + 1; // We want to start at 1
+
+    if (!stylesToSkip.includes(i)) {
+      styles = [...styles, { name, value: `\x1b[${i}m` }];
+    } // Skip code 6
+  });
+
+  return styles;
+}
+
+module.exports = { createFgBgStyles, createFormatStyles };

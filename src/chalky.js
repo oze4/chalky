@@ -1,9 +1,9 @@
-const { makeFgBgStyles, makeFormattingStyles } = require('./styles');
+const { createFgBgStyles, createFormatStyles } = require('./styles');
 
 const colors = {
   fg: createColors('foreground'),
   bg: createColors('background'),
-  formats: makeFormattingStyles(),
+  formats: createFormatStyles(),
   lineEnd: '\x1b[0m',
 };
 
@@ -47,7 +47,7 @@ const stylesProto = Object.defineProperties(() => {}, { ...styles });
 function createColors(fgbg) {
   const isForeground = fgbg === 'fg' || fgbg === 'foreground';
   const isBackground = fgbg === 'bg' || fgbg === 'background';
-  const styles = makeFgBgStyles(isForeground ? '3' : isBackground ? '4' : null); // foreground codes use a 3, while background codes use a 4
+  const styles = createFgBgStyles(isForeground ? '3' : isBackground ? '4' : null); // foreground codes use a 3, while background codes use a 4
 
   if (!styles) {
     throw new Error(`Unable to create ${isForeground ? 'foreground' : isBackground ? 'background' : ''} colors`);
