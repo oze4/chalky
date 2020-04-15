@@ -5,7 +5,7 @@
 # smallchalk
 Core functionality like [Chalk.js](https://www.npmjs.com/package/chalk) but with fewer features. Meant for rapid prototyping without worrying about package.json bloat.
 
-- **Small**: [coming in at only **810B gzipped & minified**!](https://bundlephobia.com/result?p=smallchalk)
+- **Small**: [coming in at only **772B gzipped & minified**!](https://bundlephobia.com/result?p=smallchalk)
 - **Simple**: self contained, **with *ZERO* dependencies**!
 
 # Details
