@@ -1,6 +1,6 @@
 {
   "name": "smallchalk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Like Chalk.js, but smaller and with fewer features",
   "main": "index.js",
   "repository": {
