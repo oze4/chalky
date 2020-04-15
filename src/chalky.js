@@ -27,9 +27,8 @@ for (const { name, value } of [...colors.fg, ...colors.bg, ...colors.formats]) {
 
       const styleChain = { color, existing };
 
-      const worker = (params) => {
-        const args = [...params];
-        const message = args.length === 1 ? '' + args[0] : args.join(' ');
+      const worker = (...params) => {
+        const message = params.length === 1 ? '' + params[0] : params.join(' ');
         return styleChain.color + message + colors.lineEnd;
       };
 

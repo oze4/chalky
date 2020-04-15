@@ -30,7 +30,7 @@ function createFormatStyles(stylesToSkip = [0, 6]) { // Skip codes 0, 6 by defau
 
   formats.forEach((name, index) => {
     if (!stylesToSkip.includes(index)) {
-      styles = [...styles, { name, value: `\x1b[${i}m` }];
+      styles = [...styles, { name, value: `\x1b[${index}m` }];
     }
   });
 
