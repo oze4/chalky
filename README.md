@@ -28,24 +28,24 @@ We're not quite hardened [chalk](https://www.npmjs.com/package/chalk), but we're
  - Chain like [chalk](https://www.npmjs.com/package/chalk):
 
 ```javascript
-const smChalk = require('smallchalk');
+const chalky = require('chalky');
 
-smChalk.bgRed.black.bold.underline("Lorem ipsum dolor sit amet");
+chalky.bgRed.black.bold.underline("Lorem ipsum dolor sit amet");
 ```
 
  - The last color in the chain is what gets used:
 
 ```javascript
 // This line..
-smChalk.red.green.blue.bgRed.bgBlack.bgYellow("Lorem ipsum dolor sit amet");
+chalky.red.green.blue.bgRed.bgBlack.bgYellow("Lorem ipsum dolor sit amet");
 // ...is equivalent to this line
-smChalk.blue.bgYellow("Lorem ipsum dolor sit amet");
+chalky.blue.bgYellow("Lorem ipsum dolor sit amet");
 
 
 // This line..
-smChalk.red.blue("Lorem ipsum dolor sit amet");
+chalky.red.blue("Lorem ipsum dolor sit amet");
 // ...is equivalent to this line
-smChalk.blue("Lorem ipsum dolor sit amet");
+chalky.blue("Lorem ipsum dolor sit amet");
 ```
 
 ---
@@ -88,8 +88,8 @@ smChalk.blue("Lorem ipsum dolor sit amet");
 Two reasons... 
 
 I wanted to understand:
- - How Chalk.js was able to use properties with the same name as both a getter and method on the same object
+ - How chalk was able to use properties with the same name as both a getter and method on the same object
    - For example, you can do `chalk.blue('foo');` and `chalk.blue.bold('foo');` (`.blue` is being used as both a method and getter)
- - How Chalk.js was able to chain these properties/methods/getters
+ - How chalk was able to chain these properties/methods/getters
  
- While modified, some of the code in this repo may resemble Chalk.js as I followed the same logic.
+ While modified, some of the code in this repo may resemble chalk as I followed the same logic.
