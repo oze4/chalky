@@ -56,14 +56,13 @@ function applyStyleChain(self, str = '') {
 
 function factory() {
   const smallChalk = { template: () => {} };
-
+  
   Object.setPrototypeOf(smallChalk, SmallChalk.prototype);
-  Object.setPrototypeOf(smallChalk.template, smallChalk);
 
-  return smallChalk.template;
+  return smallChalk;
 }
 
-function createColors(fgbg) { // fgbg = one of: 'fg', 'bg', 'foreground', 'background'
+function createColors(fgbg) { // fgbg = one of ['fg', 'bg', 'foreground', 'background']
   const allowed = ['fg', 'bg', 'foreground', 'background'];
 
   if (!allowed.includes(fgbg)) {
