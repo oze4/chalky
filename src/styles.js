@@ -10,13 +10,11 @@ const colors = [
   'white',     // 7
 ];
 const formats = [
-  // skip      // 0
   'bold',      // 1
   'light',     // 2
   'italic',    // 3
   'underline', // 4
   'blink',     // 5
-  // skip      // 6
   'inverse',   // 7
   'hidden',    // 8
 ];
