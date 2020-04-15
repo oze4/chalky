@@ -1,4 +1,4 @@
-const { makeFgBgStyles, makeFormattingStyles } = require('./defaultStyles');
+const { makeFgBgStyles, makeFormattingStyles } = require('./styles');
 
 const colors = {
   fg: createColors('foreground'),
