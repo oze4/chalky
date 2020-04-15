@@ -4,7 +4,7 @@
 Core functionality like Chalk.js but with fewer features. Meant for rapid prototyping without worrying about package.json bloat.
 
  - #### Small
-   - coming in at only **819B gzipped & minified**!
+   - [coming in at only **819B gzipped & minified**!](https://bundlephobia.com/result?p=smallchalk@1.0.0)
 
  - #### Simple
    - self contained, **with *ZERO* dependencies**!
