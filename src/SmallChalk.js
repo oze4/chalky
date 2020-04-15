@@ -55,9 +55,7 @@ function applyStyleChain(self, str = '') {
 }
 
 function factory() {
-  const smallChalk = {
-    template: (...args) => someTagFunction(chalk.template, ...args),
-  };
+  const smallChalk = { template: () => {} };
 
   Object.setPrototypeOf(smallChalk, SmallChalk.prototype);
   Object.setPrototypeOf(smallChalk.template, smallChalk);
