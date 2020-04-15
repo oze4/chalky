@@ -1,12 +1,28 @@
+[![npm version](https://badge.fury.io/js/smallchalk.svg)](https://badge.fury.io/js/smallchalk)
+
 # SmallChalk
-Like Chalk.js, but smaller and with fewer features. Meant for rapid prototyping without worrying about package.json bloat
+Core functionality like Chalk.js but with fewer features. Meant for rapid prototyping without worrying about package.json bloat.
+
+Extremely small package size, coming in at only **819B gzipped & minified**!
+
+# Installation
+
+```
+npm i smallchalk
+```
+
+or
+
+```
+yarn add smallchalk
+```
 
 # Example
 
 You can chain methods/getters just like you can in Chalk.js:
 
 ```javascript
-const smallChalk = require('./SmallChalk');
+const smallChalk = require('smallchalk');
 
 const message = smallChalk.bgRed.black.bold.underline("I am a test message");
 
