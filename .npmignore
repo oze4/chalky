@@ -1,1 +1,8 @@
 docs/
+src/
+node_modules/
+
+index.js
+.gitignore
+rollup.config.js
+README.md
