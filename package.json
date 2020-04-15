@@ -1,0 +1,25 @@
+{
+  "name": "smallchalk",
+  "version": "1.0.0",
+  "description": "Like Chalk.js, but smaller and with fewer features",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oze4/SmallChalk.git"
+  },
+  "keywords": [
+    "chalk",
+    "nodejs",
+    "console",
+    "color",
+    "chalkjs",
+    "smallchalk",
+    "small-chalk"
+  ],
+  "author": "Matt Oestreich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oze4/SmallChalk/issues"
+  },
+  "homepage": "https://github.com/oze4/SmallChalk#readme"
+}
