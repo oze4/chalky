@@ -25,13 +25,20 @@ We're not quite hardened [chalk](https://www.npmjs.com/package/chalk), but we're
 
 # Demos
 
- - Chain like [chalk](https://www.npmjs.com/package/chalk):
+#### ~ Chaining (like [chalk](https://www.npmjs.com/package/chalk)) ~
+
+  - Chain methods together to change the foreground color, background color, add formatting (italic, bold, underline, etc..), for unique color/formatting combinations.
 
 ```javascript
 const chalky = require('chalky');
 
-chalky.bgRed.black.bold.underline("Lorem ipsum dolor sit amet");
+chalky.italic.bgBlack.red.bold("Lorem ipsum dolor sit amet");
 ```
+
+ - Output:
+<img src="/docs/demo_0.png" width="300" height="40" alt="demo"/>
+
+#### ~ Color priority in chain ~
 
  - The last color in the chain is what gets used:
 
@@ -40,13 +47,21 @@ chalky.bgRed.black.bold.underline("Lorem ipsum dolor sit amet");
 chalky.red.green.blue.bgRed.bgBlack.bgYellow("Lorem ipsum dolor sit amet");
 // ...is equivalent to this line
 chalky.blue.bgYellow("Lorem ipsum dolor sit amet");
+```
+ - Output:
+<img src="/docs/demo_1.png" width="300" height="40" alt="demo"/>
 
+  - Another example:
 
+```javascript
 // This line..
 chalky.red.blue("Lorem ipsum dolor sit amet");
 // ...is equivalent to this line
 chalky.blue("Lorem ipsum dolor sit amet");
 ```
+
+ - Output:
+<img src="/docs/demo_2.png" width="300" height="40" alt="demo"/>
 
 ---
 
