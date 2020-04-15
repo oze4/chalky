@@ -1,36 +1,36 @@
 [![npm version](https://badge.fury.io/js/smallchalk.svg)](https://badge.fury.io/js/smallchalk)
 
-# SmallChalk
-Core functionality like Chalk.js but with fewer features. Meant for rapid prototyping without worrying about package.json bloat.
+`npm i smallchalk` / `yarn add smallchalk`
 
- - **Small**
-   - [coming in at only **810B gzipped & minified**!](https://bundlephobia.com/result?p=smallchalk)
+# smallchalk
+Core functionality like [Chalk.js](https://www.npmjs.com/package/chalk) but with fewer features. Meant for rapid prototyping without worrying about package.json bloat.
 
- - **Simple**
-   - self contained, **with *ZERO* dependencies**!
+- **Small**: [coming in at only **810B gzipped & minified**!](https://bundlephobia.com/result?p=smallchalk)
+- **Simple**: self contained, **with *ZERO* dependencies**!
 
-# Installation
+# Details
 
-```
-npm i smallchalk
-```
-
-or
-
-```
-yarn add smallchalk
-```
-
-# Example
-
-You can chain methods/getters just like you can in Chalk.js:
+ - Chain methods/getters like in Chalk.js:
 
 ```javascript
-const smallChalk = require('smallchalk');
+const smChalk = require('smallchalk');
 
-const message = smallChalk.bgRed.black.bold.underline("Lorem ipsum dolor sit amet");
+smChalk.bgRed.black.bold.underline("Lorem ipsum dolor sit amet");
+```
 
-console.log(message);
+ - The last color in the chain is what gets used:
+
+```javascript
+// This line..
+smChalk.red.green.blue.bgRed.bgBlack.bgYellow("Lorem ipsum dolor sit amet");
+// ...is equivalent to this line
+smChalk.blue.bgYellow("Lorem ipsum dolor sit amet");
+
+
+// This line..
+smChalk.red.blue("Lorem ipsum dolor sit amet");
+// ...is equivalent to this line
+smChalk.blue("Lorem ipsum dolor sit amet");
 ```
 
 # Properties

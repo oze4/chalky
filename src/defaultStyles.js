@@ -1,4 +1,4 @@
-exports.makeFgBgStyles = (val) => [
+exports.makeFgBgStyles = (val) => val && [
   {
     name: 'black',
     value: `\x1b[${val}0m`,

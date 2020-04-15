@@ -14,29 +14,22 @@ function SmallChalk() {
 }
 
 const styles = Object.create(null);
-const allColors = [...colors.fg, ...colors.bg, ...colors.formats];
 
-for (const { name, value } of allColors) {
+for (const { name, value } of [...colors.fg, ...colors.bg, ...colors.formats]) {
   styles[name] = {
     get() {
-      const parent = this._styleChain;
-
       let color = value;
 
-      if (parent !== undefined) {
-        color = parent.color + color;
+      const existing = this._styleChain;
+      if (existing !== undefined) {
+        color = existing.color + color;
       }
 
-      const styleChain = { color, parent };
+      const styleChain = { color, existing };
 
       const worker = (...arguments) => {
         const message =
           arguments.length === 1 ? '' + arguments[0] : arguments.join(' ');
-
-        if (styleChain === undefined) {
-          return message;
-        }
-
         return styleChain.color + message + colors.lineEnd;
       };
 
@@ -52,21 +45,22 @@ for (const { name, value } of allColors) {
 const stylesProto = Object.defineProperties(() => {}, { ...styles });
 
 function createColors(fgbg) {
-  const allowed = ['fg', 'bg', 'foreground', 'background'];
+  const isForeground = fgbg === 'fg' || fgbg === 'foreground';
+  const isBackground = fgbg === 'bg' || fgbg === 'background';
+  const styles = makeFgBgStyles(isForeground ? '3' : isBackground ? '4' : null); // foreground codes use a 3, while background codes use a 4
 
-  if (allowed.includes(fgbg)) {
-    const isForeground = fgbg === 'fg' || fgbg === 'foreground';
-
-    // Foreground codes start with a 3, while background codes start with a 4
-    // (thats the only difference between foreground and background color codes)
-    const styles = makeFgBgStyles(isForeground ? '3' : '4');
-
-    const capsStart = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-
-    return isForeground
-      ? styles
-      : styles.map((s) => ({ ...s, name: `bg${capsStart(s.name)}` }));
+  if (!styles) {
+    throw new Error(`Unable to create ${isForeground ? 'foreground' : isBackground ? 'background' : ''} colors`);
   }
+
+  return isForeground
+    ? styles
+    : isBackground
+    ? styles && styles.map((s) => ({
+        ...s,
+        name: `bg${s.name.charAt(0).toUpperCase() + s.name.slice(1)}`,
+      }))
+    : [];
 }
 
 Object.defineProperties(SmallChalk.prototype, styles);
