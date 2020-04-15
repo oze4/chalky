@@ -32,7 +32,9 @@ We're not quite hardened [chalk](https://www.npmjs.com/package/chalk), but we're
 ```javascript
 const chalky = require('chalky');
 
-chalky.italic.bgBlack.red.bold("Lorem ipsum dolor sit amet");
+console.log(
+  chalky.italic.bgBlack.red.bold("Lorem ipsum dolor sit amet")
+);
 ```
 
  - Output:
@@ -43,10 +45,15 @@ chalky.italic.bgBlack.red.bold("Lorem ipsum dolor sit amet");
  - The last color in the chain is what gets used:
 
 ```javascript
+const chalky = require('chalky');
+
 // This line..
-chalky.red.green.blue.bgRed.bgBlack.bgYellow("Lorem ipsum dolor sit amet");
+const a = chalky.red.green.blue.bgRed.bgBlack.bgYellow("Lorem ipsum dolor sit amet");
 // ...is equivalent to this line
-chalky.blue.bgYellow("Lorem ipsum dolor sit amet");
+const b = chalky.blue.bgYellow("Lorem ipsum dolor sit amet");
+
+console.log(`This:         ${a}`);
+console.log(`Should equal: ${b}`);
 ```
  - Output:
 <img src="/docs/demo_1.png" width="300" height="40" alt="demo"/>
@@ -54,10 +61,15 @@ chalky.blue.bgYellow("Lorem ipsum dolor sit amet");
   - Another example:
 
 ```javascript
+const chalky = require('chalky');
+
 // This line..
-chalky.red.blue("Lorem ipsum dolor sit amet");
+const a = chalky.red.blue("Lorem ipsum dolor sit amet");
 // ...is equivalent to this line
-chalky.blue("Lorem ipsum dolor sit amet");
+const b = chalky.blue("Lorem ipsum dolor sit amet");
+
+console.log(`This:         ${a}`);
+console.log(`Should equal: ${b}`);
 ```
 
  - Output:
