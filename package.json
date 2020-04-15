@@ -1,20 +1,22 @@
 {
-  "name": "smallchalk",
-  "version": "1.0.4",
-  "description": "Like Chalk.js, but smaller and with fewer features",
+  "name": "chalky",
+  "version": "1.0.0",
+  "description": "Like chalk.js, but smaller and with fewer features",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oze4/SmallChalk.git"
+    "url": "git+https://github.com/oze4/chalky.git"
   },
   "keywords": [
     "chalk",
     "nodejs",
+    "node",
+    "express",
+    "expressjs",
     "console",
     "color",
     "chalkjs",
-    "smallchalk",
-    "small-chalk",
+    "chalky",
     "console color",
     "color text",
     "colorsjs"
@@ -22,7 +24,7 @@
   "author": "Matt Oestreich",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oze4/SmallChalk/issues"
+    "url": "https://github.com/oze4/chalky/issues"
   },
-  "homepage": "https://github.com/oze4/SmallChalk#readme"
+  "homepage": "https://github.com/oze4/chalky#readme"
 }

@@ -1,16 +1,31 @@
-[![npm version](https://badge.fury.io/js/smallchalk.svg)](https://badge.fury.io/js/smallchalk)
+[![npm version](https://badge.fury.io/js/chalky.svg)](https://badge.fury.io/js/chalky)
 
-`npm i smallchalk` / `yarn add smallchalk`
+`npm i chalky` / `yarn add chalky`
 
-# smallchalk
-Core functionality like [Chalk.js](https://www.npmjs.com/package/chalk) but with fewer features. Meant for rapid prototyping without worrying about package.json bloat.
+# chalky
 
-- **Small**: [coming in at only **772 bytes (gzipped & minified)**!](https://bundlephobia.com/result?p=smallchalk)
-- **Simple**: self contained, **with *ZERO* dependencies**!
+# Table of Contents
 
-# Details
+ - [About](#about)
+ - [Demos](#demos)
+ - [Properties / API](#properties)
+ - [Why?](#why)
 
- - Chain methods/getters like in Chalk.js:
+ ---
+
+# About
+
+Like [chalk](https://www.npmjs.com/package/chalk), but smaller ([772 bytes](https://bundlephobia.com/result?p=chalky)), self-contained (**no dependencies**), and fewer features.  Think of `chalky` like a 'stripped down', basic version of [chalk](https://www.npmjs.com/package/chalk).. 
+
+`chalky` aims to provide a [chalk](https://www.npmjs.com/package/chalk)-like experience, but for the most basic of console color features. Simple and small. 'Cheaply' add color to your console without worrying about the size of `node_modules`.
+
+We're not quite hardened [chalk](https://www.npmjs.com/package/chalk), but we're still `chalky` :smirk: 
+
+ ---
+
+# Demos
+
+ - Chain like [chalk](https://www.npmjs.com/package/chalk):
 
 ```javascript
 const smChalk = require('smallchalk');
@@ -33,9 +48,11 @@ smChalk.red.blue("Lorem ipsum dolor sit amet");
 smChalk.blue("Lorem ipsum dolor sit amet");
 ```
 
+---
+
 # Properties
 
- - ### Foreground Colors:
+ - **Foreground Colors:**
    - `black`
    - `red`
    - `green`
@@ -45,7 +62,7 @@ smChalk.blue("Lorem ipsum dolor sit amet");
    - `cyan`
    - `white`
    
- - ### Background Colors:
+ - **Background Colors:**
    - `bgBlack`
    - `bgRed`
    - `bgGreen`
@@ -55,7 +72,7 @@ smChalk.blue("Lorem ipsum dolor sit amet");
    - `bgCyan`
    - `bgWhite`
  
- - ### Formatting:
+ - **Formatting:**
    - `bold`
    - `light`
    - `italic`
@@ -63,6 +80,8 @@ smChalk.blue("Lorem ipsum dolor sit amet");
    - `blink`
    - `inverse`
    - `hidden`
+
+---
    
 # Why?
 

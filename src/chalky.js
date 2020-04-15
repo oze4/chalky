@@ -7,10 +7,10 @@ const colors = {
   lineEnd: '\x1b[0m',
 };
 
-function SmallChalk() {
-  const smallChalk = {};
-  Object.setPrototypeOf(smallChalk, SmallChalk.prototype);
-  return smallChalk;
+function Chalky() {
+  const chalky = {};
+  Object.setPrototypeOf(chalky, Chalky.prototype);
+  return chalky;
 }
 
 const styles = Object.create(null);
@@ -63,6 +63,6 @@ function createColors(fgbg) {
     : [];
 }
 
-Object.defineProperties(SmallChalk.prototype, styles);
+Object.defineProperties(Chalky.prototype, styles);
 
-module.exports = SmallChalk();
+module.exports = Chalky();
