@@ -38,7 +38,7 @@ console.log(
 ```
 
  - Output:
-<img src="//github.com/oze4/chalky/docs/demo_0.png" width="300" height="40" alt="demo"/>
+<img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_0.png" width="300" height="40" alt="demo"/>
 
 #### ~ Color priority in chain ~
 
@@ -56,7 +56,7 @@ console.log(`This:         ${a}`);
 console.log(`Should equal: ${b}`);
 ```
  - Output:
-<img src="//github.com/oze4/chalky/docs/demo_1.png" width="300" height="40" alt="demo"/>
+<img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_1.png" width="300" height="40" alt="demo"/>
 
   - Another example:
 
@@ -73,7 +73,7 @@ console.log(`Should equal: ${b}`);
 ```
 
  - Output:
-<img src="//github.com/oze4/chalky/docs/demo_2.png" width="300" height="40" alt="demo"/>
+<img src="http://raw.githubusercontent.com/oze4/chalky/master/docs/demo_2.png" width="300" height="40" alt="demo"/>
 
 ---
 
