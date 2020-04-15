@@ -1,6 +1,7 @@
 docs/
 src/
 node_modules/
+.vscode/
 
 index.js
 .gitignore
