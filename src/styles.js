@@ -24,16 +24,15 @@ function createFgBgStyles(val) {
   return colors.map((name, index) => ({ name, value: `\x1b[${val}${index}m` }));
 }
 
-function createFormatStyles() {
+function createFormatStyles(stylesToSkip = [6]) { // Skip code 6 by default
   let styles = [];
-  
+
   formats.forEach((name, index) => {
-    const stylesToSkip = [6];
-    let i = index + 1; // We want to start at 1
+    const i = index + 1; // We want to start at 1
 
     if (!stylesToSkip.includes(i)) {
       styles = [...styles, { name, value: `\x1b[${i}m` }];
-    } // Skip code 6
+    }
   });
 
   return styles;
