@@ -1,4 +1,4 @@
-const { createFgBgStyles, createFormatStyles } = require('./styles');
+const { createColors, createFormatStyles } = require('./styles');
 
 const colors = {
   fg: createColors('foreground'),
@@ -43,25 +43,6 @@ for (const { name, value } of [...colors.fg, ...colors.bg, ...colors.formats]) {
 }
 
 const stylesProto = Object.defineProperties(() => {}, { ...styles });
-
-function createColors(fgbg) {
-  const isForeground = fgbg === 'fg' || fgbg === 'foreground';
-  const isBackground = fgbg === 'bg' || fgbg === 'background';
-  const styles = createFgBgStyles(isForeground ? '3' : isBackground ? '4' : null); // foreground codes use a 3, while background codes use a 4
-
-  if (!styles) {
-    throw new Error(`Unable to create ${isForeground ? 'foreground' : isBackground ? 'background' : ''} colors`);
-  }
-
-  return isForeground
-    ? styles
-    : isBackground
-    ? styles && styles.map((s) => ({
-        ...s,
-        name: `bg${s.name.charAt(0).toUpperCase() + s.name.slice(1)}`,
-      }))
-    : [];
-}
 
 Object.defineProperties(Chalky.prototype, styles);
 

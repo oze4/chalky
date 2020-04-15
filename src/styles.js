@@ -37,4 +37,23 @@ function createFormatStyles(stylesToSkip = [0, 6]) { // Skip codes 0, 6 by defau
   return styles;
 }
 
-module.exports = { createFgBgStyles, createFormatStyles };
+function createColors(fgbg) {
+  const isForeground = fgbg === 'fg' || fgbg === 'foreground';
+  const isBackground = fgbg === 'bg' || fgbg === 'background';
+  const styles = createFgBgStyles(isForeground ? '3' : isBackground ? '4' : null); // foreground codes use a 3, while background codes use a 4
+
+  if (!styles) {
+    throw new Error(`Unable to create ${isForeground ? 'foreground' : isBackground ? 'background' : ''} colors`);
+  }
+
+  return isForeground
+    ? styles
+    : isBackground
+    ? styles && styles.map((s) => ({
+        ...s,
+        name: `bg${s.name.charAt(0).toUpperCase() + s.name.slice(1)}`,
+      }))
+    : [];
+}
+
+module.exports = { createFgBgStyles, createFormatStyles, createColors };
