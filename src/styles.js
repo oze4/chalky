@@ -10,6 +10,7 @@ const colors = [
   'white',     // 7
 ];
 const formats = [
+  // skip      // 0
   'bold',      // 1
   'light',     // 2
   'italic',    // 3
@@ -24,13 +25,11 @@ function createFgBgStyles(val) {
   return colors.map((name, index) => ({ name, value: `\x1b[${val}${index}m` }));
 }
 
-function createFormatStyles(stylesToSkip = [6]) { // Skip code 6 by default
+function createFormatStyles(stylesToSkip = [0, 6]) { // Skip codes 0, 6 by default
   let styles = [];
 
   formats.forEach((name, index) => {
-    const i = index + 1; // We want to start at 1
-
-    if (!stylesToSkip.includes(i)) {
+    if (!stylesToSkip.includes(index)) {
       styles = [...styles, { name, value: `\x1b[${i}m` }];
     }
   });
