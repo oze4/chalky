@@ -66,9 +66,11 @@ console.log(message);
    
 # Why?
 
-Two reasons... I wanted to understand:
- - how Chalk.js was able to use properties with the same name as both a getter and method on the same object
-   - for example, you can do `chalk.blue('foo');` and `chalk.blue.bold('foo');` (`.blue` is being used as both a method and getter)
- - how Chalk.js was able to chain these properties/methods/getters
+Two reasons... 
+
+I wanted to understand:
+ - How Chalk.js was able to use properties with the same name as both a getter and method on the same object
+   - For example, you can do `chalk.blue('foo');` and `chalk.blue.bold('foo');` (`.blue` is being used as both a method and getter)
+ - How Chalk.js was able to chain these properties/methods/getters
  
  While modified, some of the code in this repo may resemble Chalk.js as I followed the same logic.
