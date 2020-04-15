@@ -14,7 +14,10 @@
     "color",
     "chalkjs",
     "smallchalk",
-    "small-chalk"
+    "small-chalk",
+    "console color",
+    "color text",
+    "colorsjs"
   ],
   "author": "Matt Oestreich",
   "license": "MIT",

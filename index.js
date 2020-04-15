@@ -1,1 +1,1 @@
-module.exports = require('./src/SmallChalk');
+module.exports = require('./src/smallchalk');
