@@ -58,11 +58,9 @@ console.log(`Should equal: ${b}`);
  - Output:
 <img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_1.png" width="300" height="40" alt="demo"/>
 
-### Specialties
+### Rainbow
 
- - Rainbow
- 
- Use `chalky.rainbow('Some string')` to 'rainbowify' a string
+ - Use `chalky.rainbow('Some string')` to 'rainbowify' a string
 
 ```javascript
 const chalky = require('chalky');
