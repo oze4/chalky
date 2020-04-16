@@ -1,6 +1,6 @@
 {
   "name": "chalky",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Like chalk.js, but smaller and with fewer features",
   "main": "lib/chalky.js",
   "repository": {
