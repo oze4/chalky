@@ -1,53 +1,59 @@
-// Order is EXTREMELY important with these arrays
-const colors = [
-  'black',     // 0
-  'red',       // 1
-  'green',     // 2
-  'yellow',    // 3
-  'blue',      // 4
-  'magenta',   // 5
-  'cyan',      // 6
-  'white',     // 7
-];
-const formats = [
-  'bold',      // 1
-  'light',     // 2
-  'italic',    // 3
-  'underline', // 4
-  'blink',     // 5
-  'inverse',   // 7
-  'hidden',    // 8
-];
+const colors = {
+  black: 0,
+  red: 1,
+  green: 2,
+  yellow: 3,
+  blue: 4,
+  magenta: 5,
+  cyan: 6,
+  white: 7,
+};
 
-function createFgBgStyles(val) {
-  return colors.map((name, index) => ({ name, value: `\x1b[${val}${index}m` }));
+const formats = {
+  bold: 1,
+  light: 2,
+  italic: 3,
+  underline: 4,
+  blink: 5,
+  inverse: 7,
+  hidden: 8,
+};
+
+function toStylesObj(obj, val = '') {
+  return Object.keys(obj).map((name) => ({
+    name,
+    value: `\x1b[${val}${obj[name]}m`,
+  }));
 }
 
-function createFormatStyles(stylesToSkip = [0, 6]) { // Skip codes 0, 6 by default
-  let styles = [];
+function createFgBgStyles(val) {
+  return toStylesObj(colors, val);
+}
 
-  formats.forEach((name, index) => {
-    if (!stylesToSkip.includes(index)) {
-      styles = [...styles, { name, value: `\x1b[${index}m` }];
-    }
-  });
-
-  return styles;
+function createFormatStyles() {
+  return toStylesObj(formats);
 }
 
 function createColors(fgbg) {
   const isForeground = fgbg === 'fg' || fgbg === 'foreground';
   const isBackground = fgbg === 'bg' || fgbg === 'background';
-  const styles = createFgBgStyles(isForeground ? '3' : isBackground ? '4' : null); // foreground codes use a 3, while background codes use a 4
+  const styles = createFgBgStyles(
+    isForeground ? '3' : isBackground ? '4' : null
+  ); // foreground codes use a 3, while background codes use a 4
 
   if (!styles) {
-    throw new Error(`Unable to create ${isForeground ? 'foreground' : isBackground ? 'background' : ''} colors`);
+    throw new Error(
+      `Unable to create ${
+        isForeground ? 'foreground' : isBackground ? 'background' : 'object. No parameters supplied. Params are required to create'
+      } colors`
+    );
   }
 
   return isForeground
     ? styles
     : isBackground
-    ? styles && styles.map((s) => ({
+    ? styles &&
+      styles.map((s) => ({
         ...s,
         name: `bg${s.name.charAt(0).toUpperCase() + s.name.slice(1)}`,
       }))
@@ -57,16 +63,23 @@ function createColors(fgbg) {
 function rainbowify(str) {
   const r = ['1', '3', '2', '4'];
   let i = 0;
-  
-  return Array.from(str).reduce((a, s) => {
-    let c = ' ', _s = s.replace(/\s+/g, '');
-    if (_s) {
-      c = `\x1b[3${r[i % r.length]}m${_s}`;
-      i = i + 1;
-    }
-    a += c;
-    return a;
-  }, '') + '\x1b[0m';
+
+  return (
+    Array.from(str).reduce((a, s) => {
+      let c = ' ',
+        _s = s.replace(/\s+/g, '');
+      if (_s) {
+        c = `\x1b[3${r[i % r.length]}m${_s}`;
+        i = i + 1;
+      }
+      a += c;
+      return a;
+    }, '') + '\x1b[0m'
+  );
 }
 
-module.exports = { createFgBgStyles, createFormatStyles, createColors, rainbowify };
+module.exports = {
+  createFormatStyles,
+  createColors,
+  rainbowify,
+};
