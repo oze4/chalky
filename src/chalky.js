@@ -1,4 +1,4 @@
-const { createColors, createFormatStyles } = require('./styles');
+const { createColors, createFormatStyles, rainbowify } = require('./styles');
 
 const colors = {
   fg: createColors('foreground'),
@@ -40,6 +40,8 @@ for (const { name, value } of [...colors.fg, ...colors.bg, ...colors.formats]) {
     },
   };
 }
+
+styles['rainbow'] = { get() { return (str) => { return rainbowify(str) } } }
 
 const stylesProto = Object.defineProperties(() => {}, { ...styles });
 

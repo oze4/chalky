@@ -54,4 +54,24 @@ function createColors(fgbg) {
     : [];
 }
 
-module.exports = { createFgBgStyles, createFormatStyles, createColors };
+function rainbowify(str) {
+  if (typeof str === 'string') {
+    const rygb = ['\x1b[31m', '\x1b[33m','\x1b[32m', '\x1b[34m']; // red, yellow, green, blue
+    const lineEnd = '\x1b[0m';
+    let i = 0;
+
+    return Array.from(str).reduce((rbow, letter) => {
+      let colorized = ' ', _letter = letter.replace(/\s+/g, '');
+
+      if (_letter !== '') {
+        colorized = `${rygb[i % rygb.length]}${_letter}`;
+        i = i + 1;
+      }
+
+      rbow += colorized;
+      return rbow;
+    }, '') + lineEnd;
+  }
+}
+
+module.exports = { createFgBgStyles, createFormatStyles, createColors, rainbowify };

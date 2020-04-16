@@ -2,6 +2,7 @@ docs/
 src/
 node_modules/
 .vscode/
+testing/
 
 index.js
 .gitignore
