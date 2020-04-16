@@ -8,6 +8,9 @@
 
  - [About](#about)
  - [Demos](#demos)
+   - [Chaining](#chaining)
+   - [Color priority in chain](#color-priority-in-chain)
+   - [Rainbow](#rainbow)
  - [Properties / API](#properties)
  - [Why?](#why)
 
@@ -25,9 +28,9 @@ We're not quite hardened [chalk](https://www.npmjs.com/package/chalk), but we're
 
 # Demos
 
-### Chaining (like [chalk](https://www.npmjs.com/package/chalk))
+### Chaining 
 
-  - Chain methods together to change the foreground color, background color, add formatting (italic, bold, underline, etc..), for unique color/formatting combinations.
+  - Like [chalk](https://www.npmjs.com/package/chalk), chain methods together to change the foreground color, background color, add formatting (italic, bold, underline, etc..), for unique color/formatting combinations.
 
 ```javascript
 const chalky = require('chalky');
@@ -58,21 +61,6 @@ console.log(`Should equal: ${b}`);
  - Output:
 <img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_1.png" width="300" height="40" alt="demo"/>
 
-### Rainbow
-
- - Use `chalky.rainbow('Some string')` to 'rainbowify' a string
-
-```javascript
-const chalky = require('chalky');
-
-console.log(
-  chalky.rainbow("Lorem ipsum dolor sit amet")
-);
-```
-
- - Output:
-<img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_rbow.png" width="300" height="40" alt="demo"/>
-
 <br />
 
 ```javascript
@@ -89,6 +77,21 @@ console.log(`Should equal: ${b}`);
 
  - Output:
 <img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_2.png" width="300" height="40" alt="demo"/>
+
+### Rainbow
+
+ - Use `chalky.rainbow('Some string')` to 'rainbowify' a string
+
+```javascript
+const chalky = require('chalky');
+
+console.log(
+  chalky.rainbow("Lorem ipsum dolor sit amet")
+);
+```
+
+ - Output:
+<img src="https://raw.githubusercontent.com/oze4/chalky/master/docs/demo_rbow.png" width="300" height="40" alt="demo"/>
 
 ---
 
