@@ -15,6 +15,8 @@ function Chalky() {
 
 const styles = Object.create(null);
 
+styles['rainbow'] = { get() { return (str) => { return rainbowify(str) } } }
+
 for (const { name, value } of [...colors.fg, ...colors.bg, ...colors.formats]) {
   styles[name] = {
     get() {
@@ -40,8 +42,6 @@ for (const { name, value } of [...colors.fg, ...colors.bg, ...colors.formats]) {
     },
   };
 }
-
-styles['rainbow'] = { get() { return (str) => { return rainbowify(str) } } }
 
 const stylesProto = Object.defineProperties(() => {}, { ...styles });
 
