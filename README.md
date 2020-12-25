@@ -18,7 +18,7 @@
 
 # About
 
-Like [chalk](https://www.npmjs.com/package/chalk) with fewer features, smaller in size ([772 bytes](https://bundlephobia.com/result?p=chalky@)), and self-contained ([zero dependencies](https://www.npmjs.com/package/chalky?activeTab=dependencies)).  Think of `chalky` like a 'stripped down', basic version of [chalk](https://www.npmjs.com/package/chalk).. 
+Like [chalk](https://www.npmjs.com/package/chalk) with fewer features, smaller in size ([905 bytes](https://bundlephobia.com/result?p=chalky@)), and self-contained ([zero dependencies](https://www.npmjs.com/package/chalky?activeTab=dependencies)).  Think of `chalky` like a 'stripped down', basic version of [chalk](https://www.npmjs.com/package/chalk).. 
 
 `chalky` aims to provide a [chalk](https://www.npmjs.com/package/chalk)-like experience, but for the most basic of console color features. Simple and small. 'Cheaply' add color to your console without worrying about the size of `node_modules`.
 
